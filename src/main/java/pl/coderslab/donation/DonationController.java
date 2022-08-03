@@ -20,7 +20,6 @@ public class DonationController {
         this.institutionRepository = institutionRepository;
     }
 
-
     @RequestMapping(value = "/form", method = RequestMethod.GET)
     public String addDonation(Model model) {
         model.addAttribute("donation", new Donation());

@@ -33,6 +33,7 @@
     </div>
 </header>
 
+
 <%@ include file="/footer.jsp" %>
 
 <script src="js/app.js"></script>

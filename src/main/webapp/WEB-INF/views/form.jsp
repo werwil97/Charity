@@ -191,6 +191,7 @@
                 </div>
             </div>
 
+
 <%--            <!-- STEP 6 -->--%>
 <%--            <div data-step="5">--%>
 <%--                <h3>Podsumowanie Twojej darowizny</h3>--%>

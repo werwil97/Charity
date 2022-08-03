@@ -20,6 +20,7 @@
     </nav>
 </header>
 
+
 <section class="login-page">
     <h2>Załóż konto</h2>
     <form:form method="post" modelAttribute="user">

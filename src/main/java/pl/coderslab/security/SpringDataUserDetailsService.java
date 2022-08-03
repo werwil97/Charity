@@ -32,4 +32,5 @@ public class SpringDataUserDetailsService implements UserDetailsService {
                 grantedAuthorities, user);
 
     }
+
 }

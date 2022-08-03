@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Setter
 public class Institution {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

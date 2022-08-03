@@ -8,6 +8,7 @@ import java.util.Collection;
 public class CurrentUser extends User {
     private final pl.coderslab.security.User user;
 
+
     public CurrentUser(String username, String password,
                        Collection<? extends GrantedAuthority> authorities,
                        pl.coderslab.security.User user) {

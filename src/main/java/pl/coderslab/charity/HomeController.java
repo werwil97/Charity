@@ -21,7 +21,6 @@ public class HomeController {
         this.categoryRepository = categoryRepository;
     }
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homeAction(Model model){
         model.addAttribute("institutions", institutionRepository.findAll());

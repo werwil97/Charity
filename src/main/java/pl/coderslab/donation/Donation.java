@@ -16,6 +16,7 @@ import java.util.List;
 @Setter
 public class Donation {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
