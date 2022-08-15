@@ -2,16 +2,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/header.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                Witaj Agata
+                Witaj <security:authentication property="principal.username"/>
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
-                    <li><a href="#">Wyloguj</a></li>
+                    <form action="<c:url value="/logout"/>" method="post">
+                    <li><a href="<c:url value="/"/>" type="submit">Wyloguj</a></li>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
                 </ul>
             </li>
         </ul>

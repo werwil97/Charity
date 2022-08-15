@@ -40,4 +40,11 @@ public class DonationController {
         return "/formSummary";
     }
 
+    @RequestMapping(value = "/formSummary", method = RequestMethod.POST)
+    public String saveDonation(Model model, @SessionAttribute("newDonation") Donation donation) {
+        donationRepository.save(donation);
+        return "/formConfirmation";
+    }
+
+
 }

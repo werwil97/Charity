@@ -2,17 +2,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/header.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                Witaj Agata
+                Witaj <security:authentication property="principal.username"/>
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
-                    <li><a href="#">Wyloguj</a></li>
+                    <form action="<c:url value="/logout"/>" method="post">
+                        <li><input type="submit" value="Wyloguj"></li>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
                 </ul>
             </li>
         </ul>
@@ -186,63 +190,9 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-<%--                    <button type="button" class="btn next-step">Dalej</button>--%>
                     <button type="submit" class="btn">Dalej</button>
                 </div>
             </div>
-
-
-<%--            <!-- STEP 6 -->--%>
-<%--            <div data-step="5">--%>
-<%--                <h3>Podsumowanie Twojej darowizny</h3>--%>
-
-<%--                <div class="summary">--%>
-<%--                    <div class="form-section">--%>
-<%--                        <h4>Oddajesz:</h4>--%>
-<%--                        <ul>--%>
-<%--                            <li>--%>
-<%--                                <span class="icon icon-bag"></span>--%>
-<%--                                <span class="summary--text"--%>
-<%--                                >4 worki ubrań w dobrym stanie dla dzieci</span--%>
-<%--                                >--%>
-<%--                            </li>--%>
-
-<%--                            <li>--%>
-<%--                                <span class="icon icon-hand"></span>--%>
-<%--                                <span class="summary--text"--%>
-<%--                                >Dla fundacji "Mam marzenie" w Warszawie</span--%>
-<%--                                >--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-
-<%--                    <div class="form-section form-section--columns">--%>
-<%--                        <div class="form-section--column">--%>
-<%--                            <h4>Adres odbioru:</h4>--%>
-<%--                            <ul>--%>
-<%--                                <li>Prosta 51</li>--%>
-<%--                                <li>Warszawa</li>--%>
-<%--                                <li>99-098</li>--%>
-<%--                                <li>123 456 789</li>--%>
-<%--                            </ul>--%>
-<%--                        </div>--%>
-
-<%--                        <div class="form-section--column">--%>
-<%--                            <h4>Termin odbioru:</h4>--%>
-<%--                            <ul>--%>
-<%--                                <li>13/12/2018</li>--%>
-<%--                                <li>15:40</li>--%>
-<%--                                <li>Brak uwag</li>--%>
-<%--                            </ul>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-
-<%--                <div class="form-group form-group--buttons">--%>
-<%--                    <button type="button" class="btn prev-step">Wstecz</button>--%>
-<%--                    <button type="submit" class="btn">Potwierdzam</button>--%>
-<%--                </div>--%>
-<%--            </div>--%>
         </form:form>
     </div>
 </section>

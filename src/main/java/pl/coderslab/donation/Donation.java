@@ -27,6 +27,7 @@ public class Donation {
     private Institution institutions;
     private String street;
     private String city;
+    @Column(columnDefinition = "char(6)")
     private String zipCode;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;

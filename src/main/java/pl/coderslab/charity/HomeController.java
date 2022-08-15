@@ -28,9 +28,4 @@ public class HomeController {
         model.addAttribute("countBags",donationRepository.quantityOfBags());
         return "index";
     }
-
-//    @RequestMapping(value = "/form", method = RequestMethod.GET)
-//    public String form(Model model) {
-//        return "/form";
-//    }
 }
